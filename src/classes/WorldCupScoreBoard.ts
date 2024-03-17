@@ -1,5 +1,5 @@
-import Match from './Match.ts'
-import matches from '../data/matches.ts'
+import Match from './Match'
+import matches from '../data/matches'
 
 export function sortMatches(matches: Match[]) {
   return matches.sort((a, b) => {
@@ -22,10 +22,10 @@ class WorldCupScoreBoard {
   }
 
   // Update a match score
-  updateScore(matchId: string, team: string, score: number) {
+  updateScore(matchId: string, home: number, away: number) {
     const existingMatch = this.matches.find((m) => m.id === matchId)
     if (existingMatch !== undefined) {
-      existingMatch.updateScore(team, score)
+      existingMatch.updateScore(home, away)
     }
   }
 
