@@ -25,7 +25,9 @@ class WorldCupScoreBoard {
   updateScore(matchId: string, home: number, away: number) {
     const existingMatch = this.matches.find((m) => m.id === matchId)
     if (existingMatch !== undefined) {
-      existingMatch.updateScore(home, away)
+      existingMatch.updateScores(home, away)
+    } else {
+      throw new Error(`A match with the id ${matchId} does not exist`)
     }
   }
 
@@ -35,10 +37,23 @@ class WorldCupScoreBoard {
     const liveMatches = this.matches.filter((m) => m.id !== matchId)
     if (existingMatch !== undefined) {
       this.matches = liveMatches
+    } else {
+      throw new Error(`A match with the id ${matchId} does not exist`)
     }
   }
 
-  // Get a summary of all matches ordered by total score and date added if same total score
+  // Get a single match
+  getMatchScores(matchId: string) {
+    const existingMatch = this.matches.find((m) => m.id === matchId)
+    if (existingMatch !== undefined) {
+      return existingMatch
+    } else {
+      throw new Error(`A match with the id ${matchId} does not exist`)
+    }
+  }
+
+  // Get a summary of all matches ordered descending by total score
+  // and ascending by date added if having the same total score
   getLiveScoresSummary() {
     return sortMatches(this.matches)
   }
