@@ -22,5 +22,5 @@ Once the following method implementations are uncommented, the others will have 
 The implemented methods are adding a new match with 0 - 0 scores for the home and away teams, updating a matches scores using a pair of provided scores, finishing a match by removing it from the scoreboard live matches list, and returning a list of the matches sorted first by total scores per match and by date started 
 
 ## Tests
-Unit tests specific to the classes have been written to verify that all methods work as expected
+Unit tests specific to the classes have been written to verify that all methods work as expected. Running ``npm run test`` runs all unit test suites.
 
