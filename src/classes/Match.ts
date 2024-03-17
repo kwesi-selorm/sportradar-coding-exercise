@@ -1,37 +1,36 @@
-import { MatchType } from '../types.ts'
+import { IMatch } from "../types";
 
-class Match implements MatchType {
-  id: string
-  homeTeam: string
-  awayTeam: string
-  homeScore: number
-  awayScore: number
-  date: string
-  startTime: string
+class Match implements IMatch {
+  id: string;
+  homeTeam: string;
+  awayTeam: string;
+  homeScore: number;
+  awayScore: number;
+  date: string;
+  startTime: string;
   constructor(
     homeTeam: string,
     awayTeam: string,
     homeScore: number,
     awayScore: number,
     date: string,
-    startTime: string
+    startTime: string,
   ) {
-    this.id = `${homeTeam.substring(0, 3).toUpperCase()}_${awayTeam.substring(0, 3).toUpperCase()}`
-    this.homeTeam = homeTeam
-    this.awayTeam = awayTeam
-    this.homeScore = homeScore
-    this.awayScore = awayScore
-    this.date = date
-    this.startTime = startTime
+    this.id = `${homeTeam.substring(0, 3).toUpperCase()}_${awayTeam
+      .substring(0, 3)
+      .toUpperCase()}`;
+    this.homeTeam = homeTeam;
+    this.awayTeam = awayTeam;
+    this.homeScore = homeScore;
+    this.awayScore = awayScore;
+    this.date = date;
+    this.startTime = startTime;
   }
 
-  updateScore(team: string, score: number) {
-    if (team === this.homeTeam) {
-      this.homeScore = score
-    } else if (team === this.awayTeam) {
-      this.awayScore = score
-    }
+  updateScore(home: number, away: number) {
+    this.homeScore = home;
+    this.awayScore = away;
   }
 }
 
-export default Match
+export default Match;
