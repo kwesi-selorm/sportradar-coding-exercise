@@ -27,7 +27,7 @@ class Match implements IMatch {
     this.startTime = startTime
   }
 
-  updateScore(home: number, away: number) {
+  updateScores(home: number, away: number) {
     this.homeScore = home
     this.awayScore = away
   }
