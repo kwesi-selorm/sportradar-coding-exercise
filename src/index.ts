@@ -1,5 +1,5 @@
-import WorldCupScoreBoard from "./classes/WorldCupScoreBoard";
 import Match from "./classes/Match";
+import WorldCupScoreBoard from "./classes/WorldCupScoreBoard";
 
 const scoreboard = new WorldCupScoreBoard();
 function printMatchDetails(matches: Array<Match>) {
@@ -17,9 +17,9 @@ printMatchDetails(scoreboard.getLiveScoresSummary());
 console.log("\n");
 
 // START A NEW MATCH
-// scoreboard.addMatch(new Match("USA", "Wales", 0, 0, "2023-09-21", " 17:00"));
-// console.log('Add match between the USA and Wales')
-// printMatchDetails(scoreboard.getLiveScoresSummary());
+scoreboard.addMatch(new Match("USA", "Wales", 0, 0, "2023-09-21", " 17:00"));
+console.log('Add match between the USA and Wales')
+printMatchDetails(scoreboard.getLiveScoresSummary());
 
 // UPDATE MATCH SCORE
 // scoreboard.updateScore("GER_POL", 6, 1);
@@ -27,6 +27,6 @@ console.log("\n");
 // printMatchDetails(scoreboard.getLiveScoresSummary());
 
 // FINISH A MATCH
-scoreboard.finishMatch("FRA_BEL");
-console.log("Finish the match between France and Belgium");
-printMatchDetails(scoreboard.getLiveScoresSummary());
+// scoreboard.finishMatch("FRA_BEL");
+// console.log("Finish the match between France and Belgium");
+// printMatchDetails(scoreboard.getLiveScoresSummary());
